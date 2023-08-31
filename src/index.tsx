@@ -1,9 +1,16 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {App} from './App.tsx'
+import {App} from './app'
+import {Provider} from "react-redux";
+import {Services} from "./services";
+import config from "./config.ts";
+import {ServicesContext} from "./context.ts";
+
+const services = new Services(config)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={services.redux}>
+    <ServicesContext.Provider value={services}>
+      <App />
+    </ServicesContext.Provider>
+  </Provider>
 )

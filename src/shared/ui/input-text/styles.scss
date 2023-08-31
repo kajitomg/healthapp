@@ -1,0 +1,14 @@
+.InputText{
+  width: 100%;
+  height: 40px;
+
+  border: 1px solid black;
+
+  padding: 2px 5px;
+
+  font-size: 14px;
+
+  &::placeholder{
+    color: rgba(0, 0, 0, 0.2);
+  }
+}
