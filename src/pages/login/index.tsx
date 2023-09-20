@@ -1,43 +1,23 @@
-import {cn} from '@bem-react/classname'
-import {useCallback, useState} from "react";
-import {Field} from "../../shared/ui/field";
-import {InputText} from "../../shared/ui/input-text";
-
-const cnLogin = cn('Login')
+import {LoginForm} from "../../features/login-form";
+import {ReactNode} from "react";
+import {Box} from "@mui/material";
+import {cn} from "@bem-react/classname";
 
 interface LoginProps {
-
+  
+  header?:ReactNode,
+  
+  footer?:ReactNode,
+  
 }
+const cnLogin = cn('Login')
 
 const Login = (props:LoginProps) => {
-  const [data, setData] = useState({
-    email:'',
-    password:''
-  })
-  
-  const callbacks = {
-    onChange:useCallback(() => {
-    
-    },[]),
-    onSubmit:useCallback(() => {
-    
-    },[])
-  }
   
   return (
-    <div className={cnLogin()}>
-      <form onSubmit={callbacks.onSubmit}>
-        <Field label={'Электронная почта'}>
-          <InputText onChange={callbacks.onChange} type={'email'} value={data.email} name={'email'} placeholder={'email'}/>
-        </Field>
-        <Field label={'Пароль'}>
-          <InputText onChange={callbacks.onChange} type={'password'} value={data.password} name={'password'} placeholder={'password'}/>
-        </Field>
-        <Field>
-          <button type="submit">Войти</button>
-        </Field>
-      </form>
-    </div>
+    <Box className={cnLogin()} height={'100%'} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+      <LoginForm/>
+    </Box>
   );
 };
 

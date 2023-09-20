@@ -1,0 +1,15 @@
+.PageLayout{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.PageLayout-header{
+  flex: 1 1 auto;
+}
+.PageLayout-content{
+  flex: 1 1 100%;
+ }
+.PageLayout-footer{
+  flex: 1 1 auto;
+}
